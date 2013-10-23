@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?page title="Untitiled ZUL" contentType="text/html;charset=UTF-8"?><zk xmlns:h="xhtml">
+    <window apply="piya.com.repay.web.Edit_repayComposer" border="normal" id="modalDialog" title="Untitled ZUL" action="show: slideDown;hide: slideUp" position="center,center" closable="true"  style="margin: auto;padding-left: 1%; auto;padding-top: 1%; auto;padding-right: 1%; auto;padding-bottom: 1%;">
+<grid width="600px">
+        <columns sizable="true">
+            <column label="ลำดับที่" sortAscending="&#36;{asc}" sortDescending="&#36;{dsc}" width="25%"/>
+            <column label="รหัสประจำตัวประชาชน" width="25%"/>
+             <column label="จำนวนเงิน" sortAscending="&#36;{asc}" sortDescending="&#36;{dsc}" width="25%"/>
+            <column label="เวลา" width="25%"/>
+        </columns>
+    <rows>
+    <row ><label value="${arg.setque}" id="setque"/>
+<label value="${arg.setiden}" id="setiden"/>
+  <textbox value="${arg.setamount}" id="setamount"/>
+   <textbox value="${arg.settime}" id="settime"/></row></rows>
+</grid>
+<button id="btnsave">  บันทึกข้อมูล</button>
+<button id="btndelect">  ลบข้อมูล</button>
+
+    </window>
+</zk>

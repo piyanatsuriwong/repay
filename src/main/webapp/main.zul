@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?page title="ระบบตรวจสอบการแจ้งการชำระเงิน" contentType="text/html;charset=UTF-8"?><zk xmlns:h="xhtml">
+  <window apply="piya.com.repay.web.MainComposer" border="normal" id="wndMain" style="background:#000000;" >
+     <div  align="left" >  <label value="::ยินดีต้อนรับสู้ระบบตรวจสอบการชำระเงิน::" style="font-size:16pt"  /><space bar="" spacing="45%"/><label value="ชื่อเข้าใช้งาน  :" style="font-size:11pt" /> <label value="${arg.value1}" id="showuser"    /><space bar="" spacing="10%"/><a href=""><label value="Logout" id="logout"    /></a></div>
+
+	<hbox>
+       
+
+<panel title="ตารางดำเนินการยืนยันการแจ้งโอน" border="normal" >
+        <panelchildren>
+         <vbox>
+<grid >
+        <columns sizable="true">
+            <column label="หัวข้อ" sortAscending="&#36;{asc}" sortDescending="&#36;{dsc}" width="20%"/>
+            <column label="กรอกข้อมูล" width="80%"/>
+        </columns>
+        <rows>
+        <row style="background:#D1EEEE;">
+                <label value="รหัสประจำตัวประชาชน:" />
+                <label id="w_iden" />
+            </row>
+            <row style="background:#D1EEEE;">
+                <label value="ชื่อ:"/>
+                <label id="w_fname" />
+            </row>
+             <row style="background:#D1EEEE;">
+                <label value="นามสกุล:"/>
+                <label id="w_lname" />
+            </row>
+             <row style="background:#D1EEEE;">
+                <label value="ที่อยู่:"/>
+                <label id="w_addr" />
+            </row>
+             <row style="background:#D1EEEE;">
+                <label value="วันเดือนปีเเกิด:"/>
+                <label id="w_bdate" />
+            </row>
+             <row style="background:#D1EEEE;">
+                <label value="email:"/>
+                <label id="w_email" />
+            </row>
+             <row style="background:#D1EEEE;">
+                <label value="เลขที่บัญชี-ธนาคารผู็โอน:"/>
+                <label id="w_na_repay" />
+            </row>
+             <row style="background:#D1EEEE;">
+                <label value="เลขที่บัญชีที่รัับเงิน-บัญชีที่ผู้กูโอนเงินเข้า:"/>
+                <label id="w_na_admin" />
+            </row>
+             <row style="background:#D1EEEE;">
+                <label value="เวลาที่แจ้งโอน:"/>
+                <label id="w_time_repay" />
+            </row>
+            <row style="background:#D1EEEE;">
+                <label value="จำนวนเงินที่แจ้งโอน:"/>
+                <label id="w_amout_repay" />
+            </row>
+
+            <row style="background:#D1EEEE;">
+                <label value="หมายเหตุ:"/>
+                <label id="w_remask" />
+            </row>
+        </rows>
+    </grid>
+   
+     
+<grid >
+        <columns sizable="true">
+            <column label="ข้อมูล"  width="100%"/>
+             
+        </columns>
+        <rows>
+       
+            <row  style="background:#D1EEEE;">
+               <hbox><label value="รายการที่กำลังทำอยู่     :"/><label id="now_id"/></hbox> 
+            </row>
+             <row style="background:#D1EEEE;">
+               <hbox> <label value="จำนวนคนที่รอการตรวจสอบ   :"/><label id="num_save" />  </hbox>
+            </row>
+             <row style="background:#D1EEEE;"> 
+              <hbox> <label value="จวนคนที่ตรวจสอบแล้ว        :"/> <label  id="num_wait"/></hbox>
+            </row>
+             <row style="background:#D1EEEE;">
+                <hbox><label value="จำนวนเงินในบัญชี          :"/> <label id="show_balance" /></hbox>
+            </row>
+                
+     </rows>
+    </grid>
+<checkbox id="checktrue" label="Information is correct"  />
+    <hbox>
+<button id="btn_submit" >ยืนยันการทำรายการ</button>
+
+<button id="btn_delet"  >ลบข้อมูล</button></hbox>
+ </vbox>
+</panelchildren>
+    </panel>
+ <vbox>   <panel title="ตารางแสดงข้อมูลผู้ที่ยังไม่ถูกยืนยันสถานะการแจ้งโอนแล้วของวันนี้" border="normal" height="305px" >
+        <panelchildren style="background-image:url(images/bg.jpg);background-attachment: fixed;background-size:cover;">
+
+
+<hbox> <label value="หาข้อมูล:"/><textbox id="text_search_befor"  /><label value="" id="chang"/><button id="btn_search_befor"  >ค้นหา</button></hbox>
+<grid mold="paging" pageSize="5"  >
+        <columns sizable="true">
+            <column label="รหัสประจำตัวประชาชน" sortAscending="&#36;{asc}" sortDescending="&#36;{dsc}" width="50%"/>
+             <column label="เวลา" sortAscending="&#36;{asc}" sortDescending="&#36;{dsc}" width="50%"/>
+              <column label="จำนวนเงิน" sortAscending="&#36;{asc}" sortDescending="&#36;{dsc}" width="50%"/>
+
+               <column label="แก้ไข" sortAscending="&#36;{asc}" sortDescending="&#36;{dsc}" width="50%"/>
+        </columns>
+        <rows id="befor_table_repay_date">
+     </rows>
+    </grid>
+</panelchildren>
+    </panel>
+    
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ <panel title="ตารางแสดงข้อมูลผู้ที่ถูกยืนยันสถานะการแจ้งโอนแล้วของวันนี้" border="normal" height="305px">
+        <panelchildren style="background-image:url(images/bg.jpg);background-attachment: fixed;background-size:cover;">
+
+     <hbox> <label value="หาข้อมูล:"/><textbox id="text_search_after"/><label value="" id="chang2"/><button id="btn_search_after"  >ค้นหา</button></hbox>
+<grid mold="paging" pageSize="5"  >
+        <columns sizable="true">
+            <column label="รหัสประจำตัวประชาชน" sortAscending="&#36;{asc}" sortDescending="&#36;{dsc}" width="50%"/>
+             <column label="เวลา" sortAscending="&#36;{asc}" sortDescending="&#36;{dsc}" width="50%"/>
+             <column label="จำนวนเงิน" sortAscending="&#36;{asc}" sortDescending="&#36;{dsc}" width="50%"/>
+             <column label="แก้ไข" sortAscending="&#36;{asc}" sortDescending="&#36;{dsc}" width="50%"/>
+        </columns>
+        <rows id="table_repay_date">   
+     </rows>
+    </grid>
+    
+</panelchildren>
+    </panel></vbox>
+</hbox>
+
+
+ <html><marquee direction="right">suranaree university of technology</marquee></html> 
+
+
+
+
+    </window>
+
+
+
+
+
+
+
+</zk>

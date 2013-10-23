@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?page title="Untitiled ZUL" contentType="text/html;charset=UTF-8"?><zk xmlns:h="xhtml">
+
+
+    <button label="Upload Image" upload="true,maxsize=300">
+<attribute name="onUpload"><![CDATA[
+org.zkoss.util.media.Media media = event.getMedia();
+if (media instanceof org.zkoss.image.Image) {
+org.zkoss.zul.Image image = new  org.zkoss.zul.Image();
+image.setContent(media);
+image.setParent(pics);
+
+          java.io.File myFile = new java.io.File(media.getName());
+          Messagebox.show("path"+myFile.getAbsolutePath());
+
+
+} else {
+Messagebox.show("Not an image: "+media, "Error", Messagebox.OK, Messagebox.ERROR);
+break;
+}
+]]></attribute>
+</button>
+<separator />
+<vlayout id="pics" width="600px" height="560px" style="overflow:auto" />
+
+</zk>

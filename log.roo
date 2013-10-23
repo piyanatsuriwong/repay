@@ -1,0 +1,192 @@
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-06 04:58:58
+project --topLevelPackage piya.com.repay
+osgi start --url http://zk-roo.googlecode.com/files/org.zkoss.zk.roo.addon-1.0.0.M4.jar
+persistence setup --provider HIBERNATE --database MYSQL
+entity jpa --class ~.domain.Data_user_repay
+field number --fieldName iden --type java.lang.Integer
+finder list
+field string --fieldName fname --notNull --sizeMin 2
+field string --fieldName lname --notNull --sizeMin 2
+field string --fieldName addr
+field string --fieldName bdate --notNull --sizeMin 2
+field string --fieldName email 
+field string --fieldName remasks
+field number --fieldName na_repay --type java.lang.Integer
+field number --fieldName na_admin --type java.lang.Integer
+field number --fieldName amount --type java.lang.Integer
+entity jpa --class ~.domain.End_repay
+field number --fieldName iden --type java.lang.Integer
+field number --fieldName na_repay --type java.lang.Integer
+field number --fieldName na_admin --type java.lang.Integer
+field number --fieldName amount --type java.lang.Integer
+field string --fieldName remasks --notNull --sizeMin 2
+field string --fieldName time_repay 
+// [failed] field number --fieldName amount --type java.lang.Integer
+web zk setup
+focus --class piya.com.repay.web.Edit_repayComposer
+composer --class ~.web.edit_repayComposer --zul edit_repay.zul
+listen to --event onClick --selector #btnsave --methodName btnsave_Clicked --class ~.web.Edit_repayComposer
+focus --class piya.com.repay.web.InsertComposer
+composer --class ~.web.insertComposer --zul insert.zul
+focus --class piya.com.repay.web.MainComposer
+composer --class ~.web.mainComposer --zul main.zul
+ persistence setup --provider HIBERNATE --database H2_IN_MEMORY
+ persistence setup --provider HIBERNATE --database MYSQL
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-06 05:55:31
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-06 06:47:39
+ focus --class ~.domain.Data_user_repay
+field string --fieldName time_repay 
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-06 06:48:47
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-06 08:06:52
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-06 08:10:21
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-06 08:12:02
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-06 08:12:07
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-06 08:13:57
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-06 08:18:32
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-06 08:18:53
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-06 09:46:44
+ focus --class ~.domain.Data_user_repay
+finder list
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-06 09:48:18
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-06 21:03:39
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-06 21:06:14
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-06 21:18:24
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-06 21:18:37
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-07 01:20:21
+ focus --class ~.domain.Data_user_repay
+finder list
+finder add --finderName findData_user_repaysByIdenLike
+ listen to --event onClick --selector #btn_search_befor --methodName btn_search_befor_Clicked --class ~.web.mainComposer
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-07 01:55:16
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-07 02:15:01
+ focus --class ~.domain.Data_user_repay
+finder list
+finder add --finderName findData_user_repaysByEmailLike
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-07 02:18:12
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-07 02:20:30
+ focus --class ~.domain.Data_user_repay
+// [failed] field string --fieldName iden  --notNull --sizeMin 2
+// [failed] field set --fieldName iden --type string
+// [failed] field set --fieldName iden --type java.lang.String
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-07 02:36:34
+ focus --class ~.domain.Data_user_repay
+field string --fieldName iden --notNull --sizeMin 2
+finder list
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-07 02:38:06
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-07 02:47:58
+ listen to --event onChanging --selector #text_search_befor --methodName text_search_befo_Changing --class ~.web.mainComposer
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-07 02:49:19
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-07 02:55:23
+ focus --class ~.domain.End_repay
+field string --fieldName iden --notNull --sizeMin 2
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-07 02:55:54
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-09 01:00:16
+ focus --class ~.domain.data_user_repay
+finder add --finderName findData_user_repaysByIdenLike
+finder list
+ focus --class ~.domain.End_repay
+finder add --finderName findEnd_repaysByIdenLike
+entity jpa --class ~.domain.status_user_repay
+field string --fieldName iden --notNull --sizeMin 2
+field string --fieldName period --notNull --sizeMin 2
+field string --fieldName remain --notNull --sizeMin 2
+field string --fieldName num_day --notNull --sizeMin 2
+field string --fieldName principle --notNull --sizeMin 2
+field string --fieldName pay --notNull --sizeMin 2
+entity jpa --class ~.domain.backlog_repay
+field string --fieldName iden 
+field string --fieldName na_repay --notNull --sizeMin 2
+field string --fieldName na_admin --notNull --sizeMin 2
+field string --fieldName time_repay 
+// [failed] field number --fieldName na_admin --type java.lang.Integer
+field number --fieldName amount --type java.lang.Integer
+field string --fieldName remasks --notNull --sizeMin 2
+finder list
+finder add --finderName findBacklog_repaysByIdenEquals
+ focus --class ~.domain.Status_user_repay
+finder add --finderName findStatus_user_repaysByIdenEquals
+finder list
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-10 01:59:50
+// [failed]  focus --class ~.domain.Topping
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-10 02:00:44
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-10 17:44:10
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-10 17:45:06
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-11 03:08:46
+focus --class ~.domain.Data_user_repay
+field number --fieldName main_id --type java.lang.Integer
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-11 03:17:39
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-11 03:24:05
+ focus --class ~.domain.Data_user_repay
+finder add --finderName findData_user_repaysByMain_idEquals
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-11 04:45:16
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-11 07:25:59
+ focus --class ~.domain.Data_user_repay
+finder list
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-11 13:15:15
+ focus --class ~.domain.End_repay
+field number --fieldName end_id --type java.lang.Integer
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-11 13:16:01
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-11 13:24:27
+ focus --class ~.domain.End_repay
+finder add --finderName findData_user_repaysByEnd_idEquals
+finder add --finderName findEnd_repaysByEnd_idEquals
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-11 13:36:13
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-12 09:30:58
+focus --class piya.com.repay.web.register.Composer
+    composer --class ~.web.register.Composer --zul register..zu
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-12 09:36:40
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-12 09:38:10
+focus --class piya.com.repay.web.register.Composer
+    composer --class ~.web.register.Composer --zul register..zul
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-12 09:38:28
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-12 09:45:35
+focus --class piya.com.repay.web.RegisterComposer
+composer --class ~.web.registerComposer --zul register.zul
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-12 11:50:00
+focus --class piya.com.repay.web.SendComposer
+composer --class ~.web.sendComposer --zul send.zul
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-12 11:50:32
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-18 13:04:05
+// [failed] entity jpa --class ~.domain.User
+entity jpa --class ~.domain.userexit
+entity jpa --class ~.domain.ad_user
+// [failed] field string --fieldName user 
+field string --fieldName username 
+field string --fieldName pass 
+finder list
+finder add --finderName findAd_usersByusernameEquals
+finder add --finderName findAd_usersByUsernameEquals
+finder add --finderName findAd_usersByPassEquals
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-18 13:18:06
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-18 20:25:56
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-19 23:54:35
+focus --class piya.com.repay.web.LoginComposer
+composer --class ~.web.loginComposer --zul login.zul
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-19 23:54:49
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2556-10-19 23:58:59
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2556-10-19 23:59:06

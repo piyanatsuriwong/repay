@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?page title="Untitiled ZUL" contentType="text/html;charset=UTF-8"?><zk xmlns:h="xhtml">
+    <window apply="piya.com.repay.web.RegisterComposer" border="normal" id="wndlogin" title="เข้าสู้ระบบ" width="600px"   style="margin: auto;padding-left: 1%; auto;padding-top: 1%; auto;padding-right: 1%; auto;padding-bottom: 1%;">
+<grid  width="600px"  >
+           <rows >
+               <row style="background:green" height="70px"> <hbox >
+               
+        
+<label value="ชื่อเข้าใช้งาน:" style="color:white"/>
+<textbox id="ruser"/>         
+<label value="รหัสผ่าน:" style="color:white"/>
+<textbox id="rpass"/>
+<button id="login" label="login"/> 
+
+</hbox>      
+               </row>
+           </rows>
+        </grid>
+
+
+ <hbox >
+ 	<space bar="" spacing="60px"/>
+   <image src="images/lock.png"  height="120px"/>
+ 
+ <vbox align="right">
+ <label value="ลงทะเบียนเข้าใช้งานระบบยืนยันการชำระเงิน"/>
+ 
+ <hbox >
+<label value="ชื่อเข้าใช้งาน:"/>
+<textbox  id="wuser" />
+</hbox>  
+<hbox>                
+<label value="รหัสผ่านใหม่:"/>
+<textbox  id="wpass" /> 
+</hbox>                                       
+<hbox>
+<label value="ยืนยันรหัสผ่าน:"/>
+<textbox  id="wpass2" /> 
+</hbox> 
+<button id="saveadd" label="สมัคใช้งาน"/> 
+
+ </vbox >
+
+</hbox> 
+
+
+    </window>
+</zk>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?page title="Untitiled ZUL" contentType="text/html;charset=UTF-8"?><zk xmlns:h="xhtml">
+    <window apply="piya.com.repay.web.InsertComposer" border="normal" id="wndMain" title="Untitled ZUL"><grid >
+        <columns sizable="true">
+            <column label="หัวข้อ" sortAscending="&#36;{asc}" sortDescending="&#36;{dsc}" width="20%"/>
+            <column label="กรอกข้อมูล" width="80%"/>
+        </columns>
+        <rows>
+        <row>
+                <label value="รหัสประจำตัวประชาชน:"/>
+                <textbox id="w_iden" width="40%"/>
+            </row>
+            <row>
+                <label value="ชื่อ:"/>
+                <textbox id="w_fname" width="40%"/>
+            </row>
+             <row>
+                <label value="นามสกุล:"/>
+                <textbox id="w_lname" width="40%"/>
+            </row>
+             <row>
+                <label value="ที่อยู่:"/>
+                <textbox id="w_addr" width="99%"/>
+            </row>
+             <row>
+                <label value="วันเดือนปีเเกิด:"/>
+                <textbox id="w_bdate" width="99%"/>
+            </row>
+             <row>
+                <label value="email:"/>
+                <textbox id="w_email" width="40%"/>
+            </row>
+             <row>
+                <label value="เลขที่บัญชี-ธนาคารผู็โอน:"/>
+                <textbox id="w_na_repay" width="40%"/>
+            </row>
+             <row>
+                <label value="เลขที่บัญชีที่รัับเงิน-บัญชีที่ผู้กูโอนเงินเข้า:"/>
+                <textbox id="w_na_admin" width="99%"/>
+            </row>
+             <row>
+                <label value="เวลาที่แจ้งโอน:"/>
+                <textbox id="w_time_repay" width="40%"/>
+            </row>
+            <row>
+                <label value="จำนวนเงินที่แจ้งโอน:"/>
+                <textbox id="w_amout_repay" width="40%"/>
+            </row>
+
+            <row>
+                <label value="หมายเหตุ:"/>
+                <textbox id="w_remask" rows="4" width="40%"/>
+            </row>
+        </rows>
+    </grid>
+
+   <panel title="ตารางแสดงข้อมูลผู้ที่ยังไม่ถูกยืนยันสถานะการแจ้งโอนแล้วของวันนี้" border="normal" height="300px">
+        <panelchildren>
+
+<grid >
+        <columns sizable="true">
+            <column label="ข้อมูการเงิน"  width="100%"/>
+             <column  width="100%"/>
+        </columns>
+        <rows>
+       
+            <row>
+               <hbox> <label value="งวดที่:"/><label id="show_period" />  </hbox>
+               <hbox> <label value="จำนวนวัน:"/> <label  id="show_num_day"/></hbox>
+               
+            </row>
+             <row>
+                <hbox><label value="เงินต้นที่คงค้าง:"/><label id="show_principle"/></hbox>
+                   <hbox><label value="ยอดเงินกู้:"/> <label id="show_pay" /></hbox>
+               
+            </row>
+             <row>
+                <hbox><label value="อัตตราดอกเบี้ย:"/><label id="show_remine"/></hbox>
+               
+            </row>
+
+                
+     </rows>
+    </grid>
+</panelchildren>
+    </panel>
+
+      <button id="btnAdd" >บันทึกข้อมูล</button>
+    </window>
+</zk>
